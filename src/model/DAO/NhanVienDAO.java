@@ -3,6 +3,7 @@ package model.DAO;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import model.DTO.NhanVien;
 import model.MongoDBConnection;
 import org.bson.Document;
 
@@ -13,9 +14,20 @@ public class NhanVienDAO {
 
     private MongoCollection<Document> nhanVienCollection;
 
-    public NhanVienDAO(MongoDBConnection connection) {
-        MongoDatabase database = connection.getDatabase();
+    public NhanVienDAO(MongoDatabase database) {
         nhanVienCollection = database.getCollection("NhanVien");
+    }
+
+    public List<NhanVien> getAllNhanVien() {
+        List<NhanVien> nhanViens = new ArrayList<>();
+        try (MongoCursor<Document> cursor = nhanVienCollection.find().iterator()) {
+            while (cursor.hasNext()) {
+                Document doc = cursor.next();
+                NhanVien nhanVien = NhanVien.fromDocument(doc);
+                nhanViens.add(nhanVien);
+            }
+        }
+        return nhanViens;
     }
 
     public void addNhanVien(int maNhanVien, String tenNhanVien, String anhDaiDien, String soDienThoai, String cccd, String diaChi, int chucVu, int maTaiKhoan, String tenTaiKhoan, String matKhau) {
@@ -36,16 +48,6 @@ public class NhanVienDAO {
 
     public Document getNhanVienByMaNhanVien(int maNhanVien) {
         return nhanVienCollection.find(new Document("maNhanVien", maNhanVien)).first();
-    }
-
-    public List<Document> getAllNhanViens() {
-        List<Document> nhanViens = new ArrayList<>();
-        try (MongoCursor<Document> cursor = nhanVienCollection.find().iterator()) {
-            while (cursor.hasNext()) {
-                nhanViens.add(cursor.next());
-            }
-        }
-        return nhanViens;
     }
 
     public void updateNhanVien(int maNhanVien, String tenNhanVien) {

@@ -4,19 +4,16 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import model.DTO.Phong;
-import model.DTO.PhongConverter;
 import model.MongoDBConnection;
 import org.bson.Document;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PhongDAO {
 
     private MongoCollection<Document> phongCollection;
 
-    public PhongDAO(MongoDBConnection connection) {
-        MongoDatabase database = connection.getDatabase();
+    public PhongDAO(MongoDatabase database) {
         phongCollection = database.getCollection("Phong");
     }
 
@@ -40,7 +37,7 @@ public class PhongDAO {
         try (MongoCursor<Document> cursor = phongCollection.find().iterator()) {
             while (cursor.hasNext()) {
                 Document document = cursor.next();
-                Phong phong = PhongConverter.documentToPhong(document);
+                Phong phong = Phong.fromDocument(document);
                 phongs.add(phong);
             }
         }

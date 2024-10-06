@@ -2,6 +2,7 @@ package model.DAO;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import model.DTO.KhachHang;
 import model.MongoDBConnection;
 import org.bson.Document;
 
@@ -12,9 +13,20 @@ public class KhachHangDAO {
 
     private MongoCollection<Document> khachHangCollection;
 
-    public KhachHangDAO(MongoDBConnection connection) {
-        MongoDatabase database = connection.getDatabase();
+    public KhachHangDAO(MongoDatabase database) {
         khachHangCollection = database.getCollection("KhachHang");
+    }
+
+    public List<KhachHang> getAllKhachHang() {
+        List<KhachHang> khachHangs = new ArrayList<>();
+        try (MongoCursor<Document> cursor = khachHangCollection.find().iterator()) {
+            while (cursor.hasNext()) {
+                Document doc = cursor.next();
+                KhachHang khachHang = KhachHang.fromDocument(doc);
+                khachHangs.add(khachHang);
+            }
+        }
+        return khachHangs;
     }
 
     public void addKhachHang(int maKhachHang, String tenKhachHang, String soDienThoai, int diemTichLuy, String email) {
@@ -30,16 +42,6 @@ public class KhachHangDAO {
 
     public Document getKhachHangByMaKhachHang(int maKhachHang) {
         return khachHangCollection.find(new Document("maKhachHang", maKhachHang)).first();
-    }
-
-    public List<Document> getAllKhachHangs() {
-        List<Document> khachHangs = new ArrayList<>();
-        try (MongoCursor<Document> cursor = khachHangCollection.find().iterator()) {
-            while (cursor.hasNext()) {
-                khachHangs.add(cursor.next());
-            }
-        }
-        return khachHangs;
     }
 
     public void updateKhachHang(int maKhachHang, String tenKhachHang) {

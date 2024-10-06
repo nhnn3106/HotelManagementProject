@@ -1,5 +1,7 @@
 package model.DTO;
 
+import org.bson.Document;
+
 public class KhachHang {
     private int maKhachHang;
     private String tenKhachHang;
@@ -56,5 +58,38 @@ public class KhachHang {
 
     public void setQuocTich(String quocTich) {
         this.quocTich = quocTich;
+    }
+
+    public static KhachHang fromDocument(Document doc) {
+        KhachHang khachHang = new KhachHang();
+
+        if (doc.containsKey("maKhachHang")) {
+            khachHang.setMaKhachHang(doc.getInteger("maKhachHang"));
+        }
+        if (doc.containsKey("tenKhachHang")) {
+            khachHang.setTenKhachHang(doc.getString("tenKhachHang"));
+        }
+        if (doc.containsKey("soDienThoai")) {
+            khachHang.setSoDienThoai(doc.getString("soDienThoai"));
+        }
+        if (doc.containsKey("CCCD")) {
+            khachHang.setCCCD(doc.getString("CCCD"));
+        }
+        if (doc.containsKey("quocTich")) {
+            khachHang.setQuocTich(doc.getString("quocTich"));
+        }
+
+        return khachHang;
+    }
+
+    @Override
+    public String toString() {
+        return "KhachHang{" +
+                "maKhachHang=" + maKhachHang +
+                ", tenKhachHang='" + tenKhachHang + '\'' +
+                ", soDienThoai='" + soDienThoai + '\'' +
+                ", CCCD='" + CCCD + '\'' +
+                ", quocTich='" + quocTich + '\'' +
+                '}';
     }
 }

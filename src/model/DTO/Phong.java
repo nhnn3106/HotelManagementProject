@@ -1,5 +1,7 @@
 package model.DTO;
 
+import org.bson.Document;
+
 public class Phong {
     private int maPhong;
     private int trangThai;
@@ -67,5 +69,27 @@ public class Phong {
                 ", tang=" + tang +
                 ", loaiPhong=" + loaiPhong +
                 '}';
+    }
+
+    public static Phong fromDocument(Document doc) {
+        Phong phong = new Phong();
+
+        if (doc.containsKey("maPhong")) {
+            phong.setMaPhong(doc.getInteger("maPhong"));
+        }
+        if (doc.containsKey("trangThai")) {
+            phong.setTrangThai(doc.getInteger("trangThai"));
+        }
+        if (doc.containsKey("soPhong")) {
+            phong.setSoPhong(doc.getString("soPhong"));
+        }
+        if (doc.containsKey("tang")) {
+            phong.setTang(doc.getInteger("tang"));
+        }
+        if (doc.containsKey("loaiPhong")) {
+            phong.setLoaiPhong(doc.getInteger("loaiPhong"));
+        }
+
+        return phong;
     }
 }
