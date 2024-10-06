@@ -4,7 +4,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import model.DTO.NhanVien;
-import model.MongoDBConnection;
+import com.mongodb.client.model.Filters;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -28,6 +28,19 @@ public class NhanVienDAO {
             }
         }
         return nhanViens;
+    }
+    
+    public NhanVien checkAccount(String tenTaiKhoan, String matKhau) {
+        Document doc = nhanVienCollection.find(Filters.and(
+                Filters.eq("tenTaiKhoan", tenTaiKhoan),
+                Filters.eq("matKhau", matKhau)
+        )).first();
+
+        if (doc != null) {
+            return NhanVien.fromDocument(doc);
+        } else {
+            return null; // Account not found
+        }
     }
 
     public void addNhanVien(int maNhanVien, String tenNhanVien, String anhDaiDien, String soDienThoai, String cccd, String diaChi, int chucVu, int maTaiKhoan, String tenTaiKhoan, String matKhau) {
