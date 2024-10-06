@@ -8,28 +8,21 @@ import javax.swing.JFrame;
 
 import Functions.ImageScale;
 import Functions.RoundedBorder;
-import com.mongodb.client.MongoDatabase;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import javax.swing.ImageIcon;
-import model.DAO.NhanVienDAO;
-import model.DTO.NhanVien;
-import model.MongoDBConnection;
 
 /**
  *
  * @author ASUS
  */
-public class DangNhap extends javax.swing.JFrame{
+public class DangNhap_view extends javax.swing.JFrame{
 
     /**
      * Creates new form DangNhap
      */
-    public DangNhap() {
+    public DangNhap_view() {
         initComponents();
-        
-        //Load database, DAO
-        
         logo.setIcon(new ImageScale().getScaledImage(logo.getWidth(), logo.getHeight(), "/images/logo.png"));
         avatar.setIcon(new ImageScale().getScaledImage(avatar.getWidth(), avatar.getHeight(), "/images/avatar.png"));
         banner_image.setIcon(new ImageScale().getScaledImage(banner_image.getWidth(), banner_image.getHeight(), "/images/banner.png"));
@@ -243,13 +236,6 @@ public class DangNhap extends javax.swing.JFrame{
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
-        NhanVien nv = nvDAO.checkAccount(accountField.getText(), passwordField.getText());
-        if (nv != null){
-            alertForPasssword.setText("oke qua page mới nè");
-        }
-        else{
-            alertForPasssword.setText("Vui lòng nhập đúng thông tin");
-        }
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void moveToNextStep(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_moveToNextStep
@@ -299,20 +285,35 @@ public class DangNhap extends javax.swing.JFrame{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DangNhap_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DangNhap_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DangNhap_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DangNhap_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            	new DangNhap();
+            	new DangNhap_view();
             }
         });
     }
@@ -333,7 +334,5 @@ public class DangNhap extends javax.swing.JFrame{
     private javax.swing.JLabel passwordText;
     private javax.swing.JPanel sideBar;
     // End of variables declaration//GEN-END:variables
-    MongoDBConnection connection = new MongoDBConnection();
-    MongoDatabase database = connection.getDatabase();
-    NhanVienDAO nvDAO = new NhanVienDAO(database);
+
 }
