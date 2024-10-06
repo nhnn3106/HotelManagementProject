@@ -17,18 +17,20 @@ public class NhanVien {
     public NhanVien() {
     }
 
-    public NhanVien(int trangThai, String matKhau, String tenTaiKhoan, int chucVu, String diaChi, String CCCD, String soDienThoai, String anhDaiDien, String tenNhanVien, int maNhanVien) {
-        this.trangThai = trangThai;
-        this.matKhau = matKhau;
-        this.tenTaiKhoan = tenTaiKhoan;
-        this.chucVu = chucVu;
-        this.diaChi = diaChi;
-        this.CCCD = CCCD;
-        this.soDienThoai = soDienThoai;
-        this.anhDaiDien = anhDaiDien;
-        this.tenNhanVien = tenNhanVien;
+    public NhanVien(int maNhanVien, String tenNhanVien, String anhDaiDien, String soDienThoai, String CCCD, String diaChi, int chucVu, String tenTaiKhoan, String matKhau, int trangThai) {
         this.maNhanVien = maNhanVien;
+        this.tenNhanVien = tenNhanVien;
+        this.anhDaiDien = anhDaiDien;
+        this.soDienThoai = soDienThoai;
+        this.CCCD = CCCD;
+        this.diaChi = diaChi;
+        this.chucVu = chucVu;
+        this.tenTaiKhoan = tenTaiKhoan;
+        this.matKhau = matKhau;
+        this.trangThai = trangThai;
     }
+
+    
 
     public int getMaNhanVien() {
         return maNhanVien;

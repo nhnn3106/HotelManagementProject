@@ -5,6 +5,7 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import model.DTO.NhanVien;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.InsertOneResult;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -43,20 +44,26 @@ public class NhanVienDAO {
         }
     }
 
-    public void addNhanVien(int maNhanVien, String tenNhanVien, String anhDaiDien, String soDienThoai, String cccd, String diaChi, int chucVu, int maTaiKhoan, String tenTaiKhoan, String matKhau) {
-        Document nhanVien = new Document("maNhanVien", maNhanVien)
-                .append("tenNhanVien", tenNhanVien)
-                .append("anhDaiDien", anhDaiDien)
-                .append("SoDienThoai", soDienThoai)
-                .append("CCCD", cccd)
-                .append("diaChi", diaChi)
-                .append("chucVu", chucVu)
-                .append("maTaiKHoan", maTaiKhoan)
-                .append("tenTaiKhoan", tenTaiKhoan)
-                .append("matKhau", matKhau);
+    public boolean createNhanVien(NhanVien nhanVien) {
+        try {
+            Document doc = new Document()
+                    .append("maNhanVien", nhanVien.getMaNhanVien())
+                    .append("tenNhanVien", nhanVien.getTenNhanVien())
+                    .append("anhDaiDien", nhanVien.getAnhDaiDien())
+                    .append("SoDienThoai", nhanVien.getSoDienThoai())
+                    .append("CCCD", nhanVien.getCCCD())
+                    .append("diaChi", nhanVien.getDiaChi())
+                    .append("chucVu", nhanVien.getChucVu())
+                    .append("tenTaiKhoan", nhanVien.getTenTaiKhoan())
+                    .append("matKhau", nhanVien.getMatKhau())
+                    .append("trangThai", nhanVien.getTrangThai());
 
-        nhanVienCollection.insertOne(nhanVien);
-        System.out.println("Added NhanVien successfully");
+            InsertOneResult result = nhanVienCollection.insertOne(doc);
+            return result.wasAcknowledged();
+        } catch (Exception e) {
+            System.out.println("Lỗi xảy ra trong quá trình tạo nhân viên: " + e.getMessage());
+            return false;
+        }
     }
 
     public Document getNhanVienByMaNhanVien(int maNhanVien) {

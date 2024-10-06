@@ -1,4 +1,4 @@
-package view;
+package view.test;
 
 import com.mongodb.client.MongoDatabase;
 import model.DAO.*;
