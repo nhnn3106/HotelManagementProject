@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Admin
@@ -15,6 +17,9 @@ public class DatPhong extends javax.swing.JFrame {
      */
     public DatPhong() {
         initComponents();
+        
+        setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
     }
 
     /**
