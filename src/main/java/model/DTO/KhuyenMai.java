@@ -1,5 +1,7 @@
 package model.DTO;
 
+import org.bson.Document;
+
 import java.util.Date;
 
 public class KhuyenMai {
@@ -47,5 +49,38 @@ public class KhuyenMai {
 
     public void setMoTa(String moTa) {
         this.moTa = moTa;
+    }
+
+    public static KhuyenMai fromDocument(Document doc) {
+        KhuyenMai khuyenMai = new KhuyenMai();
+
+        if (doc.containsKey("maKhuyenMai")) {
+            khuyenMai.setMaKhuyenMai(doc.getInteger("maKhuyenMai"));
+        }
+        if (doc.containsKey("ngayBatDau")) {
+            khuyenMai.setNgayBatDau(doc.getDate("ngayBatDau"));
+        }
+        if (doc.containsKey("ngayKetThuc")) {
+            khuyenMai.setNgayKetThuc(doc.getDate("ngayKetThuc"));
+        }
+        if (doc.containsKey("tiLeKhuyenMai")) {
+            khuyenMai.setTiLeKhuyenMai(doc.getInteger("tiLeKhuyenMai"));
+        }
+        if (doc.containsKey("moTa")) {
+            khuyenMai.setMoTa(doc.getString("moTa"));
+        }
+
+        return khuyenMai;
+    }
+
+    @Override
+    public String toString() {
+        return "KhuyenMai{" +
+                "maKhuyenMai=" + maKhuyenMai +
+                ", ngayBatDau=" + ngayBatDau +
+                ", ngayKetThuc=" + ngayKetThuc +
+                ", tiLeKhuyenMai=" + tiLeKhuyenMai +
+                ", moTa='" + moTa + '\'' +
+                '}';
     }
 }

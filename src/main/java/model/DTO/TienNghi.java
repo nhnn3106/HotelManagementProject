@@ -1,5 +1,8 @@
 package model.DTO;
 
+
+import org.bson.Document;
+
 import java.util.Date;
 
 public class TienNghi {
@@ -68,5 +71,42 @@ public class TienNghi {
 
     public void setNgayBaoTriGanNhat(Date ngayBaoTriGanNhat) {
         this.ngayBaoTriGanNhat = ngayBaoTriGanNhat;
+    }
+
+    public static TienNghi fromDocument(Document doc) {
+        TienNghi tienNghi = new TienNghi();
+
+        if (doc.containsKey("maTienNghi")) {
+            tienNghi.setMaTienNghi(doc.getInteger("maTienNghi"));
+        }
+        if (doc.containsKey("tenTienNghi")) {
+            tienNghi.setTenTienNghi(doc.getString("tenTienNghi"));
+        }
+        if (doc.containsKey("moTa")) {
+            tienNghi.setMoTa(doc.getString("moTa"));
+        }
+        if (doc.containsKey("soLuong")) {
+            tienNghi.setSoLuong(doc.getInteger("soLuong"));
+        }
+        if (doc.containsKey("ngayLapDat")) {
+            tienNghi.setNgayLapDat(doc.getDate("ngayLapDat"));
+        }
+        if (doc.containsKey("ngayBaoTriGanNhat")) {
+            tienNghi.setNgayBaoTriGanNhat(doc.getDate("ngayBaoTriGanNhat"));
+        }
+
+        return tienNghi;
+    }
+
+    @Override
+    public String toString() {
+        return "TienNghi{" +
+                "maTienNghi=" + maTienNghi +
+                ", tenTienNghi='" + tenTienNghi + '\'' +
+                ", moTa='" + moTa + '\'' +
+                ", soLuong=" + soLuong +
+                ", ngayLapDat=" + ngayLapDat +
+                ", ngayBaoTriGanNhat=" + ngayBaoTriGanNhat +
+                '}';
     }
 }

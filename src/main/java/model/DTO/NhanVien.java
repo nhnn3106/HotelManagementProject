@@ -1,5 +1,7 @@
 package model.DTO;
 
+import org.bson.Document;
+
 public class NhanVien {
     private int maNhanVien;
     private String tenNhanVien;
@@ -106,5 +108,55 @@ public class NhanVien {
 
     public void setTrangThai(int trangThai) {
         this.trangThai = trangThai;
+    }
+    public static NhanVien fromDocument(Document doc) {
+        NhanVien nhanVien = new NhanVien();
+        if (doc.containsKey("maNhanVien")) {
+            nhanVien.setMaNhanVien(doc.getInteger("maNhanVien"));
+        }
+        if (doc.containsKey("tenNhanVien")) {
+            nhanVien.setTenNhanVien(doc.getString("tenNhanVien"));
+        }
+        if (doc.containsKey("anhDaiDien")) {
+            nhanVien.setAnhDaiDien(doc.getString("anhDaiDien"));
+        }
+        if (doc.containsKey("SoDienThoai")) {
+            nhanVien.setSoDienThoai(doc.getString("SoDienThoai"));
+        }
+        if (doc.containsKey("CCCD")) {
+            nhanVien.setCCCD(doc.getString("CCCD"));
+        }
+        if (doc.containsKey("diaChi")) {
+            nhanVien.setDiaChi(doc.getString("diaChi"));
+        }
+        if (doc.containsKey("chucVu")) {
+            nhanVien.setChucVu(doc.getInteger("chucVu"));
+        }
+        if (doc.containsKey("tenTaiKhoan")) {
+            nhanVien.setTenTaiKhoan(doc.getString("tenTaiKhoan"));
+        }
+        if (doc.containsKey("matKhau")) {
+            nhanVien.setMatKhau(doc.getString("matKhau"));
+        }
+        if (doc.containsKey("trangThai")) {
+            nhanVien.setTrangThai(doc.getInteger("trangThai"));
+        }
+        return nhanVien;
+    }
+
+    @Override
+    public String toString() {
+        return "NhanVien{" +
+                "maNhanVien=" + maNhanVien +
+                ", tenNhanVien='" + tenNhanVien + '\'' +
+                ", anhDaiDien='" + anhDaiDien + '\'' +
+                ", soDienThoai='" + soDienThoai + '\'' +
+                ", CCCD='" + CCCD + '\'' +
+                ", diaChi='" + diaChi + '\'' +
+                ", chucVu=" + chucVu +
+                ", tenTaiKhoan='" + tenTaiKhoan + '\'' +
+                ", matKhau='" + matKhau + '\'' +
+                ", trangThai=" + trangThai +
+                '}';
     }
 }

@@ -1,5 +1,8 @@
 package model.DTO;
 
+import org.bson.Document;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -99,5 +102,71 @@ public class DonDatPhong {
 
     public void setHoaDon(int hoaDon) {
         this.hoaDon = hoaDon;
+    }
+
+    public static DonDatPhong fromDocument(Document doc) {
+        DonDatPhong donDatPhong = new DonDatPhong();
+
+        if (doc.containsKey("maDonDat")) {
+            donDatPhong.setMaDonDat(doc.getInteger("maDonDat"));
+        }
+        if (doc.containsKey("ngayDatPhong")) {
+            donDatPhong.setNgayDatPhong(doc.getDate("ngayDatPhong"));
+        }
+        if (doc.containsKey("ngayNhanPhong")) {
+            donDatPhong.setNgayNhanPhong(doc.getDate("ngayNhanPhong"));
+        }
+        if (doc.containsKey("ngayTraPhong")) {
+            donDatPhong.setNgayTraPhong(doc.getDate("ngayTraPhong"));
+        }
+        if (doc.containsKey("trangThai")) {
+            donDatPhong.setTrangThai(doc.getInteger("trangThai"));
+        }
+
+        // Convert KhachO array
+        if (doc.containsKey("KhachO")) {
+            List<Document> khachODocs = (List<Document>) doc.get("KhachO");
+            List<KhachHang> khachO = new ArrayList<>();
+            for (Document khachODoc : khachODocs) {
+                KhachHang khachHang = KhachHang.fromDocument(khachODoc);
+                khachO.add(khachHang);
+            }
+            donDatPhong.setKhachO(khachO);
+        }
+
+        // Convert DichVuSuDung array
+        if (doc.containsKey("dichVuSuDung")) {
+            List<Document> dichVuDocs = (List<Document>) doc.get("dichVuSuDung");
+            List<DichVu> dichVuSuDung = new ArrayList<>();
+            for (Document dichVuDoc : dichVuDocs) {
+                DichVu dichVu = DichVu.fromDocument(dichVuDoc);
+                dichVuSuDung.add(dichVu);
+            }
+            donDatPhong.setDichVuSuDung(dichVuSuDung);
+        }
+
+        if (doc.containsKey("Phong")) {
+            donDatPhong.setPhong(doc.getInteger("Phong"));
+        }
+        if (doc.containsKey("HoaDon")) {
+            donDatPhong.setHoaDon(doc.getInteger("HoaDon"));
+        }
+
+        return donDatPhong;
+    }
+
+    @Override
+    public String toString() {
+        return "DonDatPhong{" +
+                "maDonDat=" + maDonDat +
+                ", ngayDatPhong=" + ngayDatPhong +
+                ", ngayNhanPhong=" + ngayNhanPhong +
+                ", ngayTraPhong=" + ngayTraPhong +
+                ", trangThai=" + trangThai +
+                ", khachO=" + khachO +
+                ", dichVuSuDung=" + dichVuSuDung +
+                ", phong=" + phong +
+                ", hoaDon=" + hoaDon +
+                '}';
     }
 }
