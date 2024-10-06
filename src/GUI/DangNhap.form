@@ -58,7 +58,7 @@
                   <Component id="logo_avatar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="loginForm" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="292" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="420" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -86,8 +86,8 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="logo">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/logo.png"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/images/logo.png&quot;))" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -114,19 +114,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="accountField" pref="315" max="32767" attributes="0"/>
-                                              <Component id="accountText" min="-2" pref="95" max="-2" attributes="0"/>
-                                              <Component id="passwordField" pref="315" max="32767" attributes="0"/>
-                                              <Component id="passwordText" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="alertForAccount" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="accountField" pref="315" max="32767" attributes="0"/>
+                                          <Component id="accountText" min="-2" pref="95" max="-2" attributes="0"/>
+                                          <Component id="passwordField" pref="315" max="32767" attributes="0"/>
+                                          <Component id="passwordText" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                                          <Component id="alertForAccount" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -251,7 +246,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="banner_image" alignment="0" pref="1650" max="32767" attributes="0"/>
+              <Component id="banner_image" alignment="0" pref="1659" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
