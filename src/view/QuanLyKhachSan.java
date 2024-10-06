@@ -14,7 +14,7 @@ public class QuanLyKhachSan {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        DatPhong_view design = new DatPhong_view();
+        HoaDon_view design = new HoaDon_view();
 //        design.setLocationRelativeTo(null);
         design.setVisible(true);
            

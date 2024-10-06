@@ -2,6 +2,8 @@ package model.DAO;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.InsertOneResult;
 import model.DTO.KhachHang;
 import model.MongoDBConnection;
 import org.bson.Document;
@@ -29,16 +31,40 @@ public class KhachHangDAO {
         return khachHangs;
     }
 
-    public void addKhachHang(int maKhachHang, String tenKhachHang, String soDienThoai, int diemTichLuy, String email) {
-        Document khachHang = new Document("maKhachHang", maKhachHang)
-                .append("tenKhachHang", tenKhachHang)
-                .append("soDienThoai", soDienThoai)
-                .append("DiemTichLuy", diemTichLuy)
-                .append("email", email);
+    public boolean createKhachHang(KhachHang khachHang) {
+        try {
+            Document doc = new Document()
+                    .append("maKhachHang", khachHang.getMaKhachHang())
+                    .append("tenKhachHang", khachHang.getTenKhachHang())
+                    .append("soDienThoai", khachHang.getSoDienThoai())
+                    .append("CCCD", khachHang.getCCCD());
 
-        khachHangCollection.insertOne(khachHang);
-        System.out.println("Added KhachHang successfully");
+            InsertOneResult result = khachHangCollection.insertOne(doc);
+            return result.wasAcknowledged(); // Kiểm tra xem insert có được xác nhận không
+        } catch (Exception e) {
+            System.out.println("Lỗi xảy ra trong quá trình tạo khách hàng: " + e.getMessage());
+            return false; // Trả về false nếu có lỗi
+        }
     }
+    
+//    public boolean createKhachHang(KhachHang khachHang) {
+//        try {
+//            Document doc = new Document()
+//                    .append("maKhachHang", khachHang.getMaKhachHang())
+//                    .append("tenKhachHang", khachHang.getTenKhachHang())
+//                    .append("soDienThoai", khachHang.getSoDienThoai())
+//                    .append("CCCD", khachHang.getCCCD())
+//                    .append("quocTich", khachHang.getQuocTich())
+//                    .append("diaChi", khachHang.getDiaChi())
+//                    .append("gioiTinh", khachHang.getGioiTinh());
+//
+//            InsertOneResult result = khachHangCollection.insertOne(doc);
+//            return result.wasAcknowledged();
+//        } catch (Exception e) {
+//            System.out.println("Lỗi xảy ra trong quá trình tạo khách hàng: " + e.getMessage());
+//            return false;
+//        }
+//    }
 
     public Document getKhachHangByMaKhachHang(int maKhachHang) {
         return khachHangCollection.find(new Document("maKhachHang", maKhachHang)).first();
@@ -53,5 +79,22 @@ public class KhachHangDAO {
     public void deleteKhachHang(int maKhachHang) {
         khachHangCollection.deleteOne(new Document("maKhachHang", maKhachHang));
         System.out.println("Deleted KhachHang successfully");
+    }
+    public KhachHang isKhachHangCu(String sdt, String cccd) {
+        // Tạo bộ lọc để kiểm tra xem có khách hàng nào có số điện thoại hoặc CCCD trùng không
+        Document doc = khachHangCollection.find(
+                Filters.or(
+                        Filters.eq("soDienThoai", sdt),
+                        Filters.eq("CCCD", cccd)
+                )
+        ).first();
+
+        // Nếu tìm thấy tài liệu, chuyển đổi nó thành đối tượng KhachHang
+        if (doc != null) {
+            return KhachHang.fromDocument(doc);
+        }
+        
+        // Nếu không tìm thấy, trả về null
+        return null;
     }
 }
