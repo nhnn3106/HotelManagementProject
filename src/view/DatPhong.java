@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package GUI;
+package view;
 
 /**
  *
@@ -82,7 +82,6 @@ public class DatPhong extends javax.swing.JFrame {
         res_btn8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         menu_wrapper.setBackground(new java.awt.Color(50, 155, 214));
         menu_wrapper.setPreferredSize(new java.awt.Dimension(277, 1090));

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package GUI;
+package view;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  *
  * @author ASUS
  */
-public class test {
+public class test1 {
     public static void main(String[] args) throws MalformedURLException {
 //        C:\Users\ASUS\Projects\HotelManagementProject
         File file = new File("src/main/java/images/logo.png");
