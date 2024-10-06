@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package quanlykhachsan;
+package GUI;
 
 /**
  *
  * @author Admin
  */
-public class ĐP extends javax.swing.JFrame {
+public class DatPhong extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public ĐP() {
+    public DatPhong() {
         initComponents();
     }
 
@@ -83,14 +83,13 @@ public class ĐP extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menu_wrapper.setBackground(new java.awt.Color(50, 155, 214));
         menu_wrapper.setPreferredSize(new java.awt.Dimension(277, 1090));
 
         logo_holder.setPreferredSize(new java.awt.Dimension(277, 84));
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quanlykhachsan/tải xuống (5).png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tải xuống (5).png"))); // NOI18N
 
         javax.swing.GroupLayout logo_holderLayout = new javax.swing.GroupLayout(logo_holder);
         logo_holder.setLayout(logo_holderLayout);
@@ -114,7 +113,7 @@ public class ĐP extends javax.swing.JFrame {
         res_btn.setBackground(new java.awt.Color(45, 135, 186));
         res_btn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         res_btn.setForeground(new java.awt.Color(255, 255, 255));
-        res_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quanlykhachsan/download.png"))); // NOI18N
+        res_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
         res_btn.setText("            ĐẶT PHÒNG");
         res_btn.setBorder(null);
         res_btn.setBorderPainted(false);
@@ -129,7 +128,7 @@ public class ĐP extends javax.swing.JFrame {
 
         res_btn5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         res_btn5.setForeground(new java.awt.Color(51, 51, 51));
-        res_btn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quanlykhachsan/tải xuống (7) (1) (1).png"))); // NOI18N
+        res_btn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tải xuống (7) (1) (1).png"))); // NOI18N
         res_btn5.setText("                HÓA ĐƠN");
         res_btn5.setToolTipText("");
         res_btn5.setActionCommand("         Hóa đơn");
@@ -137,8 +136,6 @@ public class ĐP extends javax.swing.JFrame {
         res_btn5.setBorderPainted(false);
         res_btn5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         res_btn5.setMargin(new java.awt.Insets(1, 10, 3, 14));
-        res_btn5.setMaximumSize(new java.awt.Dimension(167, 25));
-        res_btn5.setMinimumSize(new java.awt.Dimension(167, 25));
         res_btn5.setPreferredSize(new java.awt.Dimension(196, 54));
         res_btn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +144,7 @@ public class ĐP extends javax.swing.JFrame {
         });
 
         res_btn1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        res_btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quanlykhachsan/tải xuống (6) (1).png"))); // NOI18N
+        res_btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tải xuống (6) (1).png"))); // NOI18N
         res_btn1.setText("   ĐƠN ĐẶT PHÒNG");
         res_btn1.setToolTipText("");
         res_btn1.setBorder(null);
@@ -166,7 +163,7 @@ public class ĐP extends javax.swing.JFrame {
         res_btn6.setBackground(new java.awt.Color(214, 50, 50));
         res_btn6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         res_btn6.setForeground(new java.awt.Color(255, 255, 255));
-        res_btn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quanlykhachsan/download (1).png"))); // NOI18N
+        res_btn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download (1).png"))); // NOI18N
         res_btn6.setText("                 Đăng xuất");
         res_btn6.setBorder(null);
         res_btn6.setBorderPainted(false);
@@ -225,8 +222,6 @@ public class ĐP extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(menu_wrapper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1123));
-
         main_body.setBackground(new java.awt.Color(255, 255, 255));
         main_body.setMinimumSize(new java.awt.Dimension(1643, 1643));
         main_body.setPreferredSize(new java.awt.Dimension(1643, 1080));
@@ -237,7 +232,7 @@ public class ĐP extends javax.swing.JFrame {
         res_btn2.setBackground(new java.awt.Color(45, 135, 186));
         res_btn2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         res_btn2.setForeground(new java.awt.Color(255, 255, 255));
-        res_btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quanlykhachsan/download.png"))); // NOI18N
+        res_btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
         res_btn2.setText("            KHÁCH HÀNG");
         res_btn2.setBorder(null);
         res_btn2.setBorderPainted(false);
@@ -252,7 +247,7 @@ public class ĐP extends javax.swing.JFrame {
 
         res_btn7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         res_btn7.setForeground(new java.awt.Color(51, 51, 51));
-        res_btn7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quanlykhachsan/tải xuống (7) (1) (1).png"))); // NOI18N
+        res_btn7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tải xuống (7) (1) (1).png"))); // NOI18N
         res_btn7.setMnemonic(' ');
         res_btn7.setText("                ĐẶT PHÒNG");
         res_btn7.setToolTipText("");
@@ -276,7 +271,7 @@ public class ĐP extends javax.swing.JFrame {
         jLabel1.setText("Xin chào, Dick");
         jLabel1.setToolTipText("");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quanlykhachsan/download (2).png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download (2).png"))); // NOI18N
 
         javax.swing.GroupLayout account_holderLayout = new javax.swing.GroupLayout(account_holder);
         account_holder.setLayout(account_holderLayout);
@@ -915,10 +910,23 @@ public class ĐP extends javax.swing.JFrame {
                 .addComponent(tableHolder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(845, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(main_body, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 2000, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(menu_wrapper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(main_body, javax.swing.GroupLayout.PREFERRED_SIZE, 2000, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(menu_wrapper, javax.swing.GroupLayout.PREFERRED_SIZE, 1123, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(main_body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1016,21 +1024,23 @@ public class ĐP extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ĐP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ĐP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ĐP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ĐP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ĐP().setVisible(true);
+                new DatPhong().setVisible(true);
             }
         });
     }
