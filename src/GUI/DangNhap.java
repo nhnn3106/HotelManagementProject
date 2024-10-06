@@ -8,9 +8,13 @@ import javax.swing.JFrame;
 
 import Functions.ImageScale;
 import Functions.RoundedBorder;
+import com.mongodb.client.MongoDatabase;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import javax.swing.ImageIcon;
+import model.DAO.NhanVienDAO;
+import model.DTO.NhanVien;
+import model.MongoDBConnection;
 
 /**
  *
@@ -23,6 +27,9 @@ public class DangNhap extends javax.swing.JFrame{
      */
     public DangNhap() {
         initComponents();
+        
+        //Load database, DAO
+        
         logo.setIcon(new ImageScale().getScaledImage(logo.getWidth(), logo.getHeight(), "/images/logo.png"));
         avatar.setIcon(new ImageScale().getScaledImage(avatar.getWidth(), avatar.getHeight(), "/images/avatar.png"));
         banner_image.setIcon(new ImageScale().getScaledImage(banner_image.getWidth(), banner_image.getHeight(), "/images/banner.png"));
@@ -236,6 +243,13 @@ public class DangNhap extends javax.swing.JFrame{
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
+        NhanVien nv = nvDAO.checkAccount(accountField.getText(), passwordField.getText());
+        if (nv != null){
+            alertForPasssword.setText("oke qua page mới nè");
+        }
+        else{
+            alertForPasssword.setText("Vui lòng nhập đúng thông tin");
+        }
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void moveToNextStep(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_moveToNextStep
@@ -319,5 +333,7 @@ public class DangNhap extends javax.swing.JFrame{
     private javax.swing.JLabel passwordText;
     private javax.swing.JPanel sideBar;
     // End of variables declaration//GEN-END:variables
-
+    MongoDBConnection connection = new MongoDBConnection();
+    MongoDatabase database = connection.getDatabase();
+    NhanVienDAO nvDAO = new NhanVienDAO(database);
 }
