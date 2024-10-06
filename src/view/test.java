@@ -16,7 +16,5 @@ public class test {
         for (Phong p : pl) {
             System.out.println(p);
         }
-
-
     }
 }
