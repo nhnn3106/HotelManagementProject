@@ -9,8 +9,6 @@ import javax.swing.JFrame;
 import Functions.ImageScale;
 import Functions.RoundedBorder;
 import java.awt.event.KeyEvent;
-import java.net.URL;
-import javax.swing.ImageIcon;
 
 /**
  *

@@ -28,16 +28,21 @@ public class LeTan_Main_view extends javax.swing.JFrame {
      */
     public LeTan_Main_view() {
         initComponents();
-        setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
         
         
         btn_DatPhong.setBackground(new java.awt.Color(45, 135, 186));
-        btn_DatPhong.setForeground(new java.awt.Color(51, 51, 51));
+        btn_DatPhong.setForeground(new java.awt.Color(0, 0, 0));
          dp  = new DatPhong_view();
          ddp = new DonDatPhong_view();
          hoaDon = new HoaDon_view();
         dp.setVisible(true);
+        ddp.setVisible(true);
+        hoaDon.setVisible(true);
         jDesktopPane1.add(dp); 
+        
+        
+        setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
+
 
         
     }
@@ -240,21 +245,15 @@ public class LeTan_Main_view extends javax.swing.JFrame {
     private void btn_DatPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DatPhongActionPerformed
         // TODO add your handling code here:
         btn_DatPhong.setBackground(new java.awt.Color(45, 135, 186));
-        btn_DatPhong.setForeground(new java.awt.Color(51, 51, 51));
+        btn_DatPhong.setForeground(new java.awt.Color(0, 0, 0));
         
         btn_HoaDon.setBackground(new java.awt.Color(255, 255, 255));
         btn_HoaDon.setForeground(new java.awt.Color(0, 0, 0));
         
         btn_DonDatPhong.setBackground(new java.awt.Color(255, 255, 255));
         btn_DonDatPhong.setForeground(new java.awt.Color(0, 0, 0));
-        
         jDesktopPane1.removeAll();
-
-      
-        
-        dp.setVisible(true);
-        hoaDon.setVisible(false);
-        ddp.setVisible(false);  
+  
           jDesktopPane1.add(dp);
         
         
@@ -262,18 +261,18 @@ public class LeTan_Main_view extends javax.swing.JFrame {
 
     private void btn_HoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HoaDonActionPerformed
         btn_HoaDon.setBackground(new java.awt.Color(45, 135, 186));
-        btn_HoaDon.setForeground(new java.awt.Color(51, 51, 51));
+        btn_HoaDon.setForeground(new java.awt.Color(0, 0, 0));
         
         btn_DatPhong.setBackground(new java.awt.Color(255, 255, 255));
         btn_DatPhong.setForeground(new java.awt.Color(0, 0, 0));
         
         btn_DonDatPhong.setBackground(new java.awt.Color(255, 255, 255));
         btn_DonDatPhong.setForeground(new java.awt.Color(0, 0, 0));
-        jDesktopPane1.removeAll();
         
-        dp.setVisible(false);
-        hoaDon.setVisible(true);
-        ddp.setVisible(false); 
+        
+     
+        jDesktopPane1.removeAll();
+       
         jDesktopPane1.add(hoaDon);
         
     }//GEN-LAST:event_btn_HoaDonActionPerformed
@@ -281,17 +280,17 @@ public class LeTan_Main_view extends javax.swing.JFrame {
     private void btn_DonDatPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DonDatPhongActionPerformed
         // TODO add your handling code here:
         btn_DonDatPhong.setBackground(new java.awt.Color(45, 135, 186));
-        btn_DonDatPhong.setForeground(new java.awt.Color(51, 51, 51));
+        btn_DonDatPhong.setForeground(new java.awt.Color(0, 0, 0));
         
         btn_DatPhong.setBackground(new java.awt.Color(255, 255, 255));
         btn_DatPhong.setForeground(new java.awt.Color(0, 0, 0));
         
         btn_HoaDon.setBackground(new java.awt.Color(255, 255, 255));
         btn_HoaDon.setForeground(new java.awt.Color(0, 0, 0));
+        
+       
+        
         jDesktopPane1.removeAll();
-        dp.setVisible(false);
-        hoaDon.setVisible(false);
-        ddp.setVisible(true);  
         jDesktopPane1.add(ddp);
     }//GEN-LAST:event_btn_DonDatPhongActionPerformed
 
@@ -452,7 +451,7 @@ public class LeTan_Main_view extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-
+       
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
