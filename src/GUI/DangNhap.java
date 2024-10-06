@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import Functions.ImageScale;
 import Functions.RoundedBorder;
 import java.awt.event.KeyEvent;
+import java.net.URL;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -63,7 +65,7 @@ public class DangNhap extends javax.swing.JFrame{
 
         sideBar.setBackground(new java.awt.Color(50, 155, 214));
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png")));
 
         avatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/avatar.png"))); // NOI18N
 
@@ -138,16 +140,13 @@ public class DangNhap extends javax.swing.JFrame{
                 .addGroup(loginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginFormLayout.createSequentialGroup()
                         .addGroup(loginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(loginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(loginFormLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addGroup(loginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(accountField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                        .addComponent(accountText, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                        .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(loginFormLayout.createSequentialGroup()
-                                    .addContainerGap()
+                            .addGroup(loginFormLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(loginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(accountField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                    .addComponent(accountText, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(alertForAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(loginFormLayout.createSequentialGroup()
                                 .addGap(73, 73, 73)
@@ -193,7 +192,7 @@ public class DangNhap extends javax.swing.JFrame{
                 .addComponent(logo_avatar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(loginForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 292, Short.MAX_VALUE))
+                .addGap(0, 420, Short.MAX_VALUE))
         );
 
         banner_image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.png"))); // NOI18N
@@ -202,7 +201,7 @@ public class DangNhap extends javax.swing.JFrame{
         banner.setLayout(bannerLayout);
         bannerLayout.setHorizontalGroup(
             bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(banner_image, javax.swing.GroupLayout.DEFAULT_SIZE, 1650, Short.MAX_VALUE)
+            .addComponent(banner_image, javax.swing.GroupLayout.DEFAULT_SIZE, 1659, Short.MAX_VALUE)
         );
         bannerLayout.setVerticalGroup(
             bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
