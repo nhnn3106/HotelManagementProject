@@ -144,7 +144,7 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(577, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(224, 224, 224)
                 .addComponent(account_holder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -268,6 +268,7 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        dob_input.setBackground(new java.awt.Color(255, 255, 255));
         dob_input.setPreferredSize(new java.awt.Dimension(313, 82));
 
         textField1.setName(""); // NOI18N
@@ -303,6 +304,7 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        cccd_input.setBackground(new java.awt.Color(255, 255, 255));
         cccd_input.setPreferredSize(new java.awt.Dimension(313, 82));
 
         textField2.setName(""); // NOI18N
@@ -338,6 +340,7 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
+        name_input.setBackground(new java.awt.Color(255, 255, 255));
         name_input.setPreferredSize(new java.awt.Dimension(313, 82));
 
         txt_CCCD.setName(""); // NOI18N
@@ -373,6 +376,7 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
+        address_input.setBackground(new java.awt.Color(255, 255, 255));
         address_input.setPreferredSize(new java.awt.Dimension(313, 82));
 
         txt_HoTen.setName(""); // NOI18N
@@ -408,6 +412,7 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
+        phone_input.setBackground(new java.awt.Color(255, 255, 255));
         phone_input.setPreferredSize(new java.awt.Dimension(313, 82));
 
         txt_SDT.setName(""); // NOI18N
@@ -443,6 +448,7 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
+        email_input.setBackground(new java.awt.Color(255, 255, 255));
         email_input.setPreferredSize(new java.awt.Dimension(313, 82));
 
         textField7.setName(""); // NOI18N
@@ -478,6 +484,7 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        Country.setBackground(new java.awt.Color(255, 255, 255));
         Country.setPreferredSize(new java.awt.Dimension(313, 82));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -515,6 +522,7 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
+        Sex.setBackground(new java.awt.Color(255, 255, 255));
         Sex.setPreferredSize(new java.awt.Dimension(313, 82));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -671,7 +679,7 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(main_bodyLayout.createSequentialGroup()
                 .addGroup(main_bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(footer, javax.swing.GroupLayout.DEFAULT_SIZE, 1248, Short.MAX_VALUE)
+                    .addComponent(footer, javax.swing.GroupLayout.DEFAULT_SIZE, 1260, Short.MAX_VALUE)
                     .addGroup(main_bodyLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(main_bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -696,7 +704,9 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
                             .addGroup(main_bodyLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(Cus_btn_gr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, 1248, Short.MAX_VALUE))
+                    .addGroup(main_bodyLayout.createSequentialGroup()
+                        .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 1260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         main_bodyLayout.setVerticalGroup(
@@ -732,18 +742,15 @@ public class DonDatPhong_view extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1258, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(main_body, javax.swing.GroupLayout.PREFERRED_SIZE, 1252, Short.MAX_VALUE)))
+                .addComponent(main_body, javax.swing.GroupLayout.PREFERRED_SIZE, 1258, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 810, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(main_body, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(main_body, javax.swing.GroupLayout.PREFERRED_SIZE, 804, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 6, Short.MAX_VALUE)))
         );
 
         pack();

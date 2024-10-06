@@ -39,6 +39,8 @@ public class LeTan_Main_view extends javax.swing.JFrame {
         ddp.setVisible(true);
         hoaDon.setVisible(true);
         jDesktopPane1.add(dp); 
+        jDesktopPane1.add(ddp); 
+        jDesktopPane1.add(hoaDon); 
         
         
         setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
@@ -216,7 +218,7 @@ public class LeTan_Main_view extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1080, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -232,11 +234,10 @@ public class LeTan_Main_view extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(menu_wrapper, javax.swing.GroupLayout.PREFERRED_SIZE, 1123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1123, Short.MAX_VALUE)
+                    .addComponent(menu_wrapper, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1123, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,10 +253,11 @@ public class LeTan_Main_view extends javax.swing.JFrame {
         
         btn_DonDatPhong.setBackground(new java.awt.Color(255, 255, 255));
         btn_DonDatPhong.setForeground(new java.awt.Color(0, 0, 0));
-        jDesktopPane1.removeAll();
-  
-          jDesktopPane1.add(dp);
         
+        dp.setVisible(true);
+        ddp.setVisible(false);
+        hoaDon.setVisible(false);
+           
         
     }//GEN-LAST:event_btn_DatPhongActionPerformed
 
@@ -269,11 +271,13 @@ public class LeTan_Main_view extends javax.swing.JFrame {
         btn_DonDatPhong.setBackground(new java.awt.Color(255, 255, 255));
         btn_DonDatPhong.setForeground(new java.awt.Color(0, 0, 0));
         
+          dp.setVisible(false); 
+        ddp.setVisible(false);
+        hoaDon.setVisible(true);
         
      
-        jDesktopPane1.removeAll();
        
-        jDesktopPane1.add(hoaDon);
+        
         
     }//GEN-LAST:event_btn_HoaDonActionPerformed
 
@@ -290,8 +294,9 @@ public class LeTan_Main_view extends javax.swing.JFrame {
         
        
         
-        jDesktopPane1.removeAll();
-        jDesktopPane1.add(ddp);
+         dp.setVisible(false);
+        ddp.setVisible(true);
+        hoaDon.setVisible(false);
     }//GEN-LAST:event_btn_DonDatPhongActionPerformed
 
     private void btn_DangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DangXuatActionPerformed
