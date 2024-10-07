@@ -4,6 +4,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
+import static com.mongodb.client.model.Sorts.descending;
 import java.time.LocalDate;
 import model.DTO.DonDatPhong;
 import org.bson.Document;
@@ -117,5 +118,20 @@ public class DonDatPhongDAO {
             return false;
         }
     }
-
+    
+    public int getLastIdDocument() {
+        // Find the last document sorted by maDV in descending order (largest maDV)
+        MongoCursor<Document> cursor = donDatPhongCollection.find()
+                .sort(descending("maDonDat")) // Sort by maDV in descending order
+                .limit(1)                 // Limit to 1 document
+                .iterator();
+        
+        if (cursor.hasNext()) {
+            Document doc = cursor.next();
+            DonDatPhong donDatPhong = DonDatPhong.fromDocument(doc);
+            return donDatPhong.getMaDonDat();
+        } else {
+            return -1; // Return null if no document is found
+        }
+    }
 }

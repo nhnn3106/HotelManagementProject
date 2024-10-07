@@ -3,6 +3,7 @@ package model.DAO;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import static com.mongodb.client.model.Indexes.descending;
 import com.mongodb.client.result.InsertOneResult;
 import model.DTO.DichVu;
 import org.bson.Document;
@@ -42,6 +43,22 @@ public class DichVuDAO {
         } catch (Exception e) {
             System.out.println("Lỗi xảy ra trong quá trình tạo dịch vụ: " + e.getMessage());
             return false;
+        }
+    }
+    
+    public int getLastIdDocument() {
+        // Find the last document sorted by maDV in descending order (largest maDV)
+        MongoCursor<Document> cursor = dichVuCollection.find()
+                .sort(descending("maDV")) // Sort by maDV in descending order
+                .limit(1)                 // Limit to 1 document
+                .iterator();
+        
+        if (cursor.hasNext()) {
+            Document doc = cursor.next();
+            DichVu dichVu = DichVu.fromDocument(doc);
+            return dichVu.getMaDV();
+        } else {
+            return -1; // Return null if no document is found
         }
     }
 }

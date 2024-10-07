@@ -8,7 +8,8 @@ import com.mongodb.client.MongoDatabase;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
+    import java.util.Date;
 import java.util.List;
 import model.DAO.DichVuDAO;
 import model.DAO.DonDatPhongDAO;
@@ -28,6 +29,7 @@ import model.DAO.LoaiPhongDAO;
 import model.DAO.NhanVienDAO;
 import model.DAO.PhongDAO;
 import model.DAO.TienNghiDAO;
+import model.DTO.DichVu;
 import model.DTO.DonDatPhong;
 import model.DTO.HoaDon;
 import model.DTO.KhachHang;
@@ -52,7 +54,11 @@ public class GODMOD {
     
     public static void main(String[] args) {
         GODMOD god = new GODMOD();
-        god.traPhongByMaPhong();
+//        god.createDichVu("Xong hoi", "Sang khoaii", 100000);
+        god.createDonDatPhong();
+        
+        
+        
     }
     
     public void getDonDatPhongNgayHomNay(){
@@ -112,5 +118,53 @@ public class GODMOD {
         donMoi.setDichVuSuDung(null);
     }
     
+    public void createDichVu(String tenDV, String moTa, int donGia){
+        DichVu dichVu = new DichVu();
+        dichVu.setMaDV(dichVuDAO.getLastIdDocument() + 1);
+        dichVu.setTenDV(tenDV);
+        dichVu.setMoTa(moTa);
+        dichVu.setDonGia(donGia);
+        System.out.println(dichVu);
+        if (dichVuDAO.createDichVu(dichVu)){
+            System.out.println("them dich vu thanh cong");
+            System.out.println(dichVu);
+        }
+        else
+        {
+           System.out.println("them dich vu that bai"); 
+        }
+    }
     
+    public void createDonDatPhong(){
+        Date today = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(today);
+        calendar.add(Calendar.DAY_OF_YEAR, -1);
+        Date yesterday = calendar.getTime();
+
+        // Ngày hôm sau
+        calendar.setTime(today);
+        calendar.add(Calendar.DAY_OF_YEAR, 1);
+        Date tomorrow = calendar.getTime(); 
+        
+        
+        
+        DonDatPhong donDatPhong = new DonDatPhong();
+        donDatPhong.setMaDonDat(donDatPhongDAO.getLastIdDocument() + 1);
+        donDatPhong.setNgayDatPhong(yesterday);
+        donDatPhong.setNgayNhanPhong(today);
+        donDatPhong.setNgayTraPhong(tomorrow);
+        donDatPhong.setTrangThai(1);
+        donDatPhong.setKhachO(new ArrayList<KhachHang>());
+        donDatPhong.setDichVuSuDung(new ArrayList<DichVu>());
+        
+        if (donDatPhongDAO.createDonDatPhong(donDatPhong)){
+            System.out.println("them don dat phong thanh cong");
+            System.out.println(donDatPhong);
+        }
+        else
+        {
+           System.out.println("them don dat phong that bai");
+        }
+    }  
 }

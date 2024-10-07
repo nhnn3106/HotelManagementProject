@@ -18,7 +18,7 @@ public class testLogin {
          MongoDBConnection connection = new MongoDBConnection();
         MongoDatabase database = connection.getDatabase();
         NhanVienDAO nhanVienDAO = new NhanVienDAO(database);
-        System.out.println(nhanVienDAO.checkAccount("nva", "1password123"));
+        System.out.println(nhanVienDAO.checkAccount("nva", "password123"));
     }
     
 }

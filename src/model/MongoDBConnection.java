@@ -31,7 +31,4 @@ public class MongoDBConnection {
             System.out.println("MongoDB connection closed.");
         }
     }
-    public static void main(String[] args) {
-        new MongoDBConnection();
-    }
 }

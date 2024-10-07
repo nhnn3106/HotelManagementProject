@@ -65,10 +65,10 @@ public class testCreate {
         boolean isLoaiPhongCreated = loaiPhongDAO.createLoaiPhong(loaiPhong);
         System.out.println("LoaiPhong created: " + isLoaiPhongCreated);
 
-//        // Test TienNghi creation
-//        TienNghi tienNghi = new TienNghi(1, "Wifi", "Kết nối internet miễn phí", null,null);
-//        boolean isTienNghiCreated = tienNghiDAO.createTienNghi(tienNghi);
-//        System.out.println("TienNghi created: " + isTienNghiCreated);
+        // Test TienNghi creation
+        TienNghi tienNghi = new TienNghi(3, "Wifi", "Kết nối internet miễn phí");
+        boolean isTienNghiCreated = tienNghiDAO.createTienNghi(tienNghi);
+        System.out.println("TienNghi created: " + isTienNghiCreated);
 //
 //        // Test KhuyenMai creation
 //        KhuyenMai khuyenMai = new KhuyenMai(1, new Date(), new Date(System.currentTimeMillis() + 86400000), 20, "Giảm giá 20%");
